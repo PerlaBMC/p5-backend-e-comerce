@@ -15,12 +15,13 @@ const obtenerProductos = async (req, res) => {
 const crearProducto = async (req, res) => {
  try {
 
-const {product_name, description, price} = req.body
+const {product_name, description, price, img} = req.body
 
 const nuevo_producto = {
 product_name,
 description,
 price,
+img
 }
 
 const new_product = await Product (nuevo_producto).save ()
@@ -43,12 +44,13 @@ const actualizarProducto = async (req, res) => {
 try {
 
 const {id} = req.params;
-const {product_name, description, price} = req.body;
+const {product_name, description, price, img} = req.body;
 
 const informacion_nueva ={
     product_name,
     description,
-    price
+    price,
+    img
 }
 
 const producto_actualizado = await Product.findByIdAndUpdate (id, informacion_nueva, {new: true})

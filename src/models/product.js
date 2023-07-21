@@ -13,7 +13,12 @@ const productSchema = Schema ({
 
     price: {
         type:String,
+    },
+
+    img: {
+        type: String                                                                                                                        
     }
+
 })
 
 productSchema.methods.toJSON = function () {
