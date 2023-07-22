@@ -10,3 +10,4 @@ router.post ("/login", iniciarSesion);
 router.get ("/renew", validarJWT, renovarToken)
 
 module.exports = router; 
+ 

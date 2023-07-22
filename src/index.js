@@ -17,6 +17,7 @@ app.get ("/api", (req, res) => {
 app.use ("/api/usuarios", require ("./routes/users.routes"))
 app.use ("/api/productos", require ("./routes/prodcuts.routes"))
 app.use ("/api/auth", require ("./routes/auth.routes"))
+app.use ("/api/productsclass", require ("./routes/productsclass.routes"))
 
 app.listen (process.env.PORT, () => {
     console.log (`Servidor vivo en el puerto ${process.env.PORT}`)
