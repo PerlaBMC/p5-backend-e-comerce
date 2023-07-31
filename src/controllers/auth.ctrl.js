@@ -17,7 +17,7 @@ if (usuario) {
     });
 }
 
-    const salt = bcrypt.genSaltSync (10)
+    const salt = bcrypt.genSaltSync (10)                
 
     const nuevo_usuario = {
         user_name,
@@ -52,7 +52,7 @@ const usuario = await user.findOne ({user_name: user_name})
 if(!usuario) {
 return res.status(400).json ({
     ok: false, 
-    msg: "Usuario o password incorrecto",
+    msg: "Usuario o password incorrectooo",
     data: {},
 });
 }

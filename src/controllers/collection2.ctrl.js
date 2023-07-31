@@ -1,13 +1,13 @@
-const ProductSchema = require("../models/productclass");
+const CollectionDosSchema= require("../models/collection2");
 
-const obtenerProductos = async (req, res) => {
+const obtenerCollecciones = async (req, res) => {
   try {
-    const products = await ProductSchema.find();
+    const collections = await CollectionDosSchema.find();
 
     return res.json({
       ok: true,
-      msg: "Productos obtenidos",
-      data: products,
+      msg: "Colecciones obtenidas",
+      data: collections,
     });
   } catch (error) {
     return res.status(500).json({
@@ -18,15 +18,15 @@ const obtenerProductos = async (req, res) => {
   }
 };
 
-const obtenerProducto = async (req, res) => {
+const obtenerColleccion = async (req, res) => {
   try {
     const { id } = req.params;
-    const product = await ProductSchema.findById(id);
+    const collection= await CollectionDosSchema.findById(id);
 
     return res.json({
       ok: true,
-      msg: "Producto obtenido",
-      data: product,
+      msg: "Colección obtenida",
+      data: collection,
     });
   } catch (error) {
     return res.status(500).json({
@@ -37,23 +37,23 @@ const obtenerProducto = async (req, res) => {
   }
 };
 
-const crearProducto = async (req, res) => {
+const crearCollection = async (req, res) => {
   try {
     const { name, description, price, image } = req.body;
 
-    const nuevo_producto = {
+    const nueva_colleccion = {
       name,
       description,
       price,
       image,
     };
 
-    const new_product = await ProductSchema(nuevo_producto).save();
+    const new_collection = await CollectionDosSchema(nueva_colleccion).save();
 
     return res.json({
       ok: true,
-      msg: "Producto creado",
-      data: new_product,
+      msg: "Colección creada",
+      data: new_collection,
     });
   } catch (error) {
     return res.status(500).json({
@@ -64,7 +64,7 @@ const crearProducto = async (req, res) => {
   }
 };
 
-const actualizarProducto = async (req, res) => {
+const actualizarCollection= async (req, res) => {
   try {
       const {id} = req.params;
       const { name, description, price, image } = req.body;
@@ -72,14 +72,14 @@ const actualizarProducto = async (req, res) => {
       const informacion_nueva = {
           name,
           description,
-          price, 
+          price,
           image
       };
-      const producto_actualizado = await ProductSchema.findByIdAndUpdate (id, informacion_nueva, { new: true })
+      const collection_actualizada = await CollectionDosSchema.findByIdAndUpdate (id, informacion_nueva, { new: true })
       return res.json ({
       ok: true,
-      msg: "producto actualizado",
-      data: producto_actualizado,
+      msg: "colección actualizado",
+      data: collection_actualizada,
   });
 } catch (error) {
   return res.status (500).json ({
@@ -91,8 +91,8 @@ const actualizarProducto = async (req, res) => {
 };
 
 module.exports = {
-  crearProducto,
-  obtenerProductos,
-  obtenerProducto,
-  actualizarProducto
+crearCollection,
+obtenerCollecciones,
+obtenerColleccion,
+actualizarCollection
 };
