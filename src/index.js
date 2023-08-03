@@ -20,6 +20,7 @@ app.use ("/api/auth", require ("./routes/auth.routes"))
 app.use ("/api/productsclass", require ("./routes/productsclass.routes"))
 app.use ("/api/collections", require ("./routes/collection.routes"))
 app.use ("/api/collections2", require ("./routes/collection2.routes"))
+app.use ("/api/collections3", require ("./routes/collection3.routes"))
  
 
 app.listen (process.env.PORT, () => {
