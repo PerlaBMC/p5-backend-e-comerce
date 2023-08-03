@@ -15,4 +15,4 @@ router.get("/:id", obtenerColleccion);
 router.post("/", validarJWT, crearCollection);
 router.put ("/:id", actualizarCollection)
 
-module.exports = router;
+module.exports = router; 

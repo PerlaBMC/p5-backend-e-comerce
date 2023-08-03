@@ -13,7 +13,6 @@ const router = Router();
 router.get("/", obtenerCollecciones);
 router.get("/:id", obtenerColleccion);
 router.post("/", validarJWT, crearCollection);
-router.post("/simpson", validarJWT, crearCollection);
 router.put ("/:id", actualizarCollection)
 
 module.exports = router;
